@@ -100,7 +100,7 @@ def generate_response(
     gc_utils.send_log(logger, user_id, prompt, payload, keyword)
 
 
-@app.event("message")
+@app.event("app_mention")
 def handle_incoming_message(client: AsyncWebClient, payload: dict) -> None:
     """
     受信メッセージを処理する
