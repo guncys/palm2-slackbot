@@ -14,12 +14,12 @@ from modules import gc_utils, utils
 # Secret Managerから環境変数を読み込む（Secret Managerを使わなければ１．事前に環境変数にこれらの値を格納し、環境変数から読み込む。２.ハードコードで入力。）
 PROJECT_ID, PROJECT_NO = gc_utils.get_project_number()
 SIGNING_SECRET = gc_utils.access_secret_version(
-    PROJECT_NO, "palm2-slack-chatbot-l-signing-secret"
+    PROJECT_NO, "palm2-slackbot-l-signing-secret"
 )
 SLACK_TOKEN = gc_utils.access_secret_version(
-    PROJECT_NO, "palm2-slack-chatbot-l-slack-token"
+    PROJECT_NO, "palm2-slackbot-l-slack-token"
 )
-RESOURCE_LOCATION = "us-central1"
+RESOURCE_LOCATION = "us-west1"
 
 HISTORICAL_CHAT_BUCKET_NAME = "historical-chat-object"
 
@@ -51,7 +51,7 @@ RESPONSE_STYLE = """"""
 logging_client = logging.Client()
 
 # cloud logging: 書き込むログの名前
-logger_name = "palm2_slack_chatbot"
+logger_name = "palm2_slackbot"
 
 # cloud logging: ロガーを選択する
 logger = logging_client.logger(logger_name)
